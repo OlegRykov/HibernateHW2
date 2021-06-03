@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>All products</h1>
+<ul>Фильтр:
+    <li>
+        <a th:href="@{'/showAllProducts-max'}">Максимальная цена</a>
+        <a th:href="@{'/showAllProducts-min'}">Минимальная цена</a>
+    </li>
+    <li>
+        <a th:href="@{'/showAllProducts-maxAndMin'}">Минимальная и максимальная цена</a>
+    </li>
+    <li>
+        <a th:href="@{'/showAllProducts'}">Сбросить фильтр</a>
+    </li>
+</ul>
+<ul>
+    <tr th:each="product : ${productList}">
+        <td th:text="${product.title}"></td>
+        <td th:text="${product.price}"></td>
+        <br>
+    </tr>
+</ul>
+</body>
+</html>
